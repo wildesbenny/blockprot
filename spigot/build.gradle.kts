@@ -6,9 +6,8 @@ buildscript {
 
 plugins {
     id("maven-publish")
-    // Since the original shadow is currently not being updated, we need to use this fork instead.
-    // See https://plugins.gradle.org/plugin/io.github.goooler.shadow
-    id("io.github.goooler.shadow") version "8.1.7"
+    // See https://plugins.gradle.org/plugin/com.gradleup.shadow
+    id("com.gradleup.shadow") version "8.3.10"
     id("net.kyori.blossom") version "1.3.1"
     id("xyz.jpenilla.run-paper") version "2.3.0"
 }
@@ -44,7 +43,7 @@ dependencies {
     implementation(project(":common"))
 
     // Spigot
-    compileOnly("org.spigotmc:spigot-api:1.21.3-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.21.11-R0.1-SNAPSHOT")
     compileOnly("org.apache.commons:commons-lang3:3.13.0")
 
     // bStats
@@ -134,7 +133,7 @@ tasks.runServer {
     downloadPlugins {
         url("https://download.luckperms.net/1561/bukkit/loader/LuckPerms-Bukkit-5.4.146.jar")
     }
-    minecraftVersion("1.21.5")
+    minecraftVersion("1.21.11")
 }
 
 publishing {
